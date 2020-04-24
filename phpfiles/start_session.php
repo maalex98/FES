@@ -9,8 +9,6 @@ if (isset($_SESSION['login'])) {
 	$row = mysqli_fetch_assoc($result);
 	if (empty($row["profileImage"]))
 		$profile = "user.png";
-	else
-		$profile = $row["profileImage"];
 
 	$message = "<a style='border: 2px solid ; border: 30px;' href='profile.php'>
 		<img src='imagini/" . $profile . "' width='40' height='30' align='middle'>" . $_SESSION['login'] . "

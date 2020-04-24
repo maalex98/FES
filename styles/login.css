@@ -180,3 +180,9 @@ label {
         text-align: center;
     }
 }
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+}

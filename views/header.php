@@ -130,9 +130,8 @@
                 </div>
             </div>
         </div>
+
         <a href="aboutUs.php">
             <p>About Us</p>
         </a>
-
-
     </div>

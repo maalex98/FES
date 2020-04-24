@@ -1,5 +1,5 @@
-<?php 
-    require_once './phpfiles/start_session.php';
+<?php
+require_once './phpfiles/startSession.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,7 @@
         <a href="index.php">
             <p>Home</p>
         </a>
+
         <div class="dropdown">
             <button class="dropbtn">
                 Men
@@ -137,8 +138,10 @@
                 </div>
             </div>
         </div>
+
         <a href="aboutUs.php">
             <p>About Us</p>
         </a>
-        <?php echo $message?>
+
+        <?php echo $message ?>
     </div>

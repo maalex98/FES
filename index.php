@@ -33,9 +33,11 @@ include 'header.php';
 		</div>
 	</div>
 </section>
-<br/>
-<br/>
-<br/>
+
+<br />
+<br />
+<br />
+
 <footer>
 	<div class="share">
 		<div class="share-content">
@@ -59,4 +61,5 @@ include 'header.php';
 	</div>
 </footer>
 </body>
+
 </html>

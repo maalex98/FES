@@ -10,7 +10,7 @@ include 'header.php';
     if (@$_GET['UserExist'] == true) {
     ?>
         <div>
-            <img style="height:2%; width:2%;" src="imagini/wrong.jpg" />
+            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
             <?php echo $_GET['UserExist'] ?>
         </div>
     <?php
@@ -18,7 +18,7 @@ include 'header.php';
     if (@$_GET['InvalidPass'] == true) {
     ?>
         <div>
-            <img style="height:2%; width:2%;" src="imagini/wrong.jpg" />
+            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
             <?php echo $_GET['InvalidPass'] ?>
         </div>
 
@@ -27,7 +27,7 @@ include 'header.php';
     if (@$_GET['InvalidEmail'] == true) {
     ?>
         <div>
-            <img style="height:2%; width:2%;" src="imagini/wrong.jpg" />
+            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
             <?php echo $_GET['InvalidEmail'] ?>
         </div>
 
@@ -36,7 +36,7 @@ include 'header.php';
     if (@$_GET['InvalidEmailPas'] == true) {
     ?>
         <div>
-            <img style="height:2%; width:2%;" src="imagini/wrong.jpg" />
+            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
             <?php echo $_GET['InvalidEmailPas'] ?>
         </div>
 

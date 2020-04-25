@@ -2,9 +2,14 @@
 include 'header.php';
 ?>
 
+<div class="testbox">
+	<h5 id="title">Welcome to our Fashion e-Shop!</h5>
+	<hr />
+</div>
+
 <section>
 	<h2 class="index-h2">
-		Welcome to our Fashion e-Shop!
+		<!-- Welcome to our Fashion e-Shop! -->
 	</h2>
 	<div class="gender">
 		<div class="gender-box">

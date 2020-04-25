@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="imagini/logo2.png" />
+    <link rel="shortcut icon" type="image/png" href="images/logo2.png" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link rel="stylesheet" type="text/css" href="styles/buton.css" />
     <link rel="stylesheet" type="text/css" href="styles/gender.css" />
@@ -17,7 +17,7 @@
 
 <body>
     <header id="top">
-        <img src="imagini/banner2.jpg" alt="Fashion e-Shop" class="banner" />
+        <img src="images/banner2.jpg" alt="Fashion e-Shop" class="banner" />
         <h1>Fashion e-Shop</h1>
     </header>
 

@@ -1,4 +1,9 @@
 @import url("./footer.css");
+html,
+body {
+    height: 100%;
+}
+
 body {
     margin: 10px;
     background-color: #f0f5f5;
@@ -28,7 +33,7 @@ h1 {
 }
 
 .navbar * {
-    padding: 5px;
+    padding: 2px;
 }
 
 .navbar a {

@@ -15,7 +15,7 @@ if (isset($_SESSION['login'])) {
 	}
 
 	$message = "<a style='border: 2px solid ; border: 30px;' href='profile.php'>
-		<img src='imagini/" . $profile . "' width='40' height='30' align='middle'>" . $_SESSION['login'] . "
+		<img src='images/" . $profile . "' width='40' height='30' align='middle'>" . $_SESSION['login'] . "
 		</a> <a href='phpfiles/logout.php?logout'>Logout</a>";
 
 	$old_name = $_SESSION['login'];

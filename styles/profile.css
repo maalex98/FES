@@ -71,3 +71,17 @@
     border-radius: 5px;
     margin-left: 5px;
 }
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 55%;
+    }
+
+    .form-group input[type="text"] {
+        width: 83%;
+    }
+
+    .form-group input[type="password"] {
+        width: 83%;
+    }
+}

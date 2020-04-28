@@ -12,7 +12,7 @@ include 'header.php';
 		<img src="images/register.png" alt="sing up image" />
 	</div>
 
-	<form method="POST" action="phpfiles/validate.php">
+	<form method="POST" action="phpfiles/login.php">
 		<div class="input-group">
 			<label>Username</label>
 			<input type="text" name="your_name">

@@ -1,0 +1,4 @@
+INSERT INTO `Products`(`type`, `name`, `description`, `image_path`, `gender`, `event`, `season`, `style`, `brand`, `color`, `trends`) 
+VALUES ("papuc", "Sandale de piele","Sandale fabricate din piele, cu benzi înguste care se leagă în jurul gleznelor.","images/women_products/sandale.jpg","female","evening","summer","modern","H&M","brown","modern");
+INSERT INTO `Products`(`type`, `name`, `description`, `image_path`, `gender`, `event`, `season`, `style`, `brand`, `color`, `trends`) 
+VALUES ("papuc", "Sandale de piele","Sandale fabricate din piele, cu benzi înguste care se leagă în jurul gleznelor.","images/women_products/sandale1.jpg","female","evening","summer","modern","H&M","brown","modern");

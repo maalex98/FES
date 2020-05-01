@@ -93,4 +93,7 @@ include 'header.php';
     </form>
 </div>
 </body>
+
+<link rel="stylesheet" type="text/css" href="styles/account.css" />
+
 </html>

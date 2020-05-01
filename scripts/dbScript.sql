@@ -20,5 +20,6 @@ season VARCHAR(20),
 style VARCHAR(50),
 brand VARCHAR(50),
 color VARCHAR(20),
-trends VARCHAR(50)
+trends VARCHAR(50),
+price INT(6)
 )

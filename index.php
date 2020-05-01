@@ -67,4 +67,6 @@ include 'header.php';
 </footer>
 </body>
 
+<link rel="stylesheet" type="text/css" href="styles/gallery.css" />
+
 </html>

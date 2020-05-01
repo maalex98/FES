@@ -15,7 +15,7 @@
 
 .form-group p {
     text-align: left;
-    font-family: "Cambria", sans-serif;
+    font-family: cursive;
     font-size: 15px;
     margin: 5px;
 }
@@ -25,7 +25,7 @@
 }
 
 .form-group input[type="text"] {
-    font-family: Poppins;
+    font-family: cursive;
     width: 93%;
     height: 30%;
     font-size: 16px;
@@ -38,7 +38,7 @@
 }
 
 .form-group input[type="file"] {
-    font-family: Poppins;
+    font-family: cursive;
     width: 93%;
     height: 30%;
     font-size: 16px;
@@ -50,7 +50,7 @@
 }
 
 .form-group input[type="password"] {
-    font-family: Poppins;
+    font-family: cursive;
     width: 93%;
     font-size: 16px;
     height: 30%;
@@ -76,11 +76,9 @@
     .form-container {
         width: 55%;
     }
-
     .form-group input[type="text"] {
         width: 83%;
     }
-
     .form-group input[type="password"] {
         width: 83%;
     }

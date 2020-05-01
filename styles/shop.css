@@ -1,110 +1,134 @@
 .shop-content {
-  display: flex;
-  align-items: start;
-  margin-left: 2%;
-  margin-right: 2%;
+    display: flex;
+    align-items: start;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
-@media only screen and (max-width: 600px) {
-  .shop-content {
-    flex-direction: column;
-  }
-  .filter-selector {
-    width: 100% !important;
-    margin-bottom: 2%;
-  }
-  .shop-showcase {
-    margin-left: 0% !important;
-  }
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 16px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
+    border: solid 1px #383434;
+}
+
+input[type="radio"] {
+    font-family: cursive;
+    font-size: 16px;
+    width: 28px;
+    margin: 0;
+    padding: 0;
 }
 
 .filter-selector {
-  width: 20%;
-  height: fit-content;
-  /* don't let it shrink */
-  flex-shrink: 0;
-  /* or grow; keep it of fixed with */
-  flex-grow: 0;
-  background-color: darksalmon;
+    width: 20%;
+    height: fit-content;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #383434;
 }
 
 .shop-showcase {
-  margin-left: 2%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  background-color: #ffe5e5;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    background-color: #383434;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10%;
+    border: solid 1px #cbc9c9;
 }
 
 .product-box {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-  margin: 10px;
+    background-color: #f0f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px #cbc9c9;
+    border-radius: 5%;
 }
 
 .product-box img {
-  width: 290px;
-  height: 230px;
-  object-fit: cover;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
 }
 
 .product-box-title {
-  background-color: darksalmon;
-  text-align: center;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+    background-color: #f0f5f5;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    font-family: cursive;
+    font-size: 16px;
+    margin-bottom: 5%;
 }
-
-.product-box:hover .product-box-title {
-  background-color: salmon;
-  color: white;
-}
-
-/* Collapsible filter selector */
 
 .collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+    background-color: #383434;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px #cbc9c9;
 }
 
 .active,
 .collapsible:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 .collapsible:after {
-  content: '\002B'; /* plus symbol */
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+    content: '\002B';
+    /* plus symbol */
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
 }
 
 .active:after {
-  content: '\2212';
+    content: '\2212';
 }
 
 .content {
-  padding: 0 18px;  
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-  max-height: 0;
+    padding: 0 18px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f0f5f5;
+    max-height: 0;
 }
 
 .content a {
-  text-decoration: none !important;
+    text-decoration: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .shop-content {
+        flex-direction: column;
+    }
+    .filter-selector {
+        width: 100% !important;
+        margin-bottom: 2%;
+    }
+    .shop-showcase {
+        margin-left: 0% !important;
+    }
 }

@@ -11,11 +11,6 @@ require_once './phpfiles/startSession.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="images/logo2.png" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <link rel="stylesheet" type="text/css" href="styles/buton.css" />
-    <link rel="stylesheet" type="text/css" href="styles/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="styles/shop.css" />
-    <link rel="stylesheet" type="text/css" href="styles/account.css" />
-    <link rel="stylesheet" type="text/css" href="styles/profile.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css" />
     <title>Fashion e-Shop</title>

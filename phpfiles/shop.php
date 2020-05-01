@@ -5,7 +5,7 @@
     $sql = sprintf("SELECT * FROM Products WHERE gender = '%s';", $_GET["gender"]);
     $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
     $actual_link = $base_url . $_SERVER["REQUEST_URI"];
-    global $id, $name, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
+    global $id, $name,$price, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
     global $allColors, $allBrands, $allStyles;
 
     function getFilters() {
@@ -23,7 +23,7 @@
     }
 
     function getProductsFromDatabase() {
-        global $sql, $conn, $id, $name, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
+        global $sql, $conn, $id, $name, $price, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
         global $stmtFormat, $whereClause, $stmtInfo;
         $whereClause = '';
         $stmtFormat = '';
@@ -60,6 +60,7 @@
         while($row = mysqli_fetch_assoc($result)) {
             $id[$i] = $row["id_product"];
             $name[$i] = $row["name"];
+            $price[$i] = $row["price"];
             $description[$i] = $row["description"];
             $imagePath[$i] = $row["image_path"];
             $gender[$i] = $row["gender"];
@@ -74,18 +75,20 @@
     }
 
     function showProducts() {
-        global $imagePath, $name, $id;
+        global $imagePath, $name, $id, $price;
         if ($id == null)
             return;
         $length = count($id);
         for($i = 0; $i < $length; $i++) {
             echo 
-            "<div class=\"product-box\">
+            "<a href=\"#\">
+            <div class=\"product-box\">
                 <img src=$imagePath[$i] alt=\"ShoeImage\" />
                 <div class=\"product-box-title\">
-                    <p>$name[$i]</p>
+                    <p>$name[$i] <b>$price[$i]\$</b></p>
                 </div>
-            </div>";
+            </div>
+            </a>";
         }
     }
 

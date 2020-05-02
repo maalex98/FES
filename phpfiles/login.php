@@ -13,7 +13,7 @@
 			$resultNumberRows = mysqli_num_rows($result);
 
 			if ($resultNumberRows == 1) {
-				$row = mysqli_fetch_row($result);
+				$row = mysqli_fetch_row($result); // fetch_assoc
 
 				if (($username == "admin") && ($password =="admin")) {
 					$_SESSION['admin'] = $username;

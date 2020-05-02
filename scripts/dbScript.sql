@@ -10,16 +10,25 @@ typeUser VARCHAR(20)
 
 CREATE TABLE Products(
 id_product  INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-type VARCHAR(20),
 name VARCHAR(50),
-description VARCHAR(1000),
 image_path VARCHAR(100),
+price INT(6),
+size JSON,
 gender VARCHAR(10),
+type VARCHAR(20),
+color VARCHAR(20),
 event VARCHAR(50),
 season VARCHAR(20),
 style VARCHAR(50),
 brand VARCHAR(50),
-color VARCHAR(20),
 trends VARCHAR(50),
-price INT(6)
+description VARCHAR(1000)
 )
+
+CREATE TABLE Cart(
+id_cart INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id_user INT(6) UNSIGNED,
+content JSON
+)
+
+ALTER TABLE `Cart` ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `Users`(`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;

@@ -9,7 +9,7 @@ include "./phpfiles/cart.php"
 </div>
 
 
-<div id="cart-content">
+<div class="cart-content">
 		<?php showCart() ?>
 		</tbody>
 	</table>

@@ -2,7 +2,7 @@
 body {
     margin: 10px;
     background-color: #f0f5f5;
-    width: 100%;
+    width: 99%;
     height: 100%;
 }
 
@@ -194,5 +194,11 @@ h3 {
     .navbar a {
         font-size: 15px;
         margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 90%;
     }
 }

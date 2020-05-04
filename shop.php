@@ -14,11 +14,10 @@ getProductsFromDatabase();
 <div class="shop-content">
     <form class="filter-selector">
         <?php
-        echo sprintf("<input type=\"hidden\" name=\"gender\" value=\"%s\">", $_GET["gender"]);
+        echo sprintf("<input type=\"hidden\" name=\"gender\" value=\"%s\">", isset($_GET["gender"]) ? $_GET["gender"] : "all");
         showFilters();
         ?>
         <input type="submit" value="Apply">
-
     </form>
 
     <div class="shop-showcase">

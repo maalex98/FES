@@ -1,14 +1,22 @@
 <?php
     require_once 'dbConnection.php';
 
-    $sql = sprintf("SELECT * FROM Products WHERE gender = '%s';", $_GET["gender"]);
-    
     global $id, $type, $name,$price, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
     global $allTypes, $allColors, $allBrands, $allStyles, $allTrends, $allSeasons;
 
+    $sql = ""; 
+
+    if (isset($_GET["gender"])) {
+        $sql = sprintf("SELECT * FROM Products WHERE gender = '%s';", $_GET["gender"]);
+    } else {
+        $sql = "SELECT * FROM Products;";
+    }
+
     function getFilters() {
         global $conn, $sql, $allTypes, $allColors, $allBrands, $allStyles, $allTrends, $allSeasons;
+
         $result = mysqli_query($conn, $sql);
+
         $i = 0;
         while($row = mysqli_fetch_assoc($result)) {
             $allTypes[$i] = $row["type"];
@@ -55,7 +63,6 @@
             $stmt->bind_param($stmtFormat, ...$stmtInfo);
         $stmt->execute();
 
-        // $result = mysqli_query($conn, $sql);
         $result = $stmt->get_result();
 
         $i = 0;
@@ -100,7 +107,6 @@
     }
 
     function mapFilter($filter) {
-
         global $allTypes, $allColors, $allBrands, $allStyles, $allTrends, $allSeasons;
 
         switch ($filter) {
@@ -135,7 +141,6 @@
     }
 
     function filter($filterValues, $filterName) {
-
         if ($filterValues != null) {
             $filterValues = array_unique($filterValues);
             $length = count($filterValues);

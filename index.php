@@ -14,7 +14,7 @@ include 'header.php';
 	<div class="gender">
 		<div class="gender-box">
 			<p>Men</p>
-			<a href="men.php">
+			<a href="shop.php?gender=male">
 				<img class="image" src="images/men.jpg">
 			</a>
 		</div>
@@ -23,7 +23,7 @@ include 'header.php';
 			<p>
 				Women
 			</p>
-			<a href="women.php">
+			<a href="shop.php?gender=female">
 				<img class="image" src="images/women.jpg">
 			</a>
 		</div>
@@ -32,7 +32,7 @@ include 'header.php';
 			<p>
 				Kids
 			</p>
-			<a href="kids.php">
+			<a href="shop.php?gender=kids">
 				<img class="image" src="images/kids.jpg">
 			</a>
 		</div>
@@ -55,7 +55,7 @@ include 'header.php';
 				<i class="fa fa-twitter-square"></i>
 			</a>
 
-			<a class="share-logo" href="https://www.instagram.com">
+			<a class="share-logo" href="https://www.youtube.com">
 				<i class="fa fa-youtube-square"></i>
 			</a>
 

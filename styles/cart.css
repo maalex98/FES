@@ -1,77 +1,95 @@
-.product-image{
-	width: 15%;
-	height: 10%;
+.cart-content {
+    display: flex;
+    flex-direction: column;
 }
 
-.algnLeft{
-	text-align:left;
+.product-image {
+    width: 15%;
+    height: 10%;
 }
 
-.algnRight{
-	text-align:right;
+.algnLeft {
+    text-align: left;
 }
 
-.algnRight5{
-	text-align:right;
-	width: 5%;
+.algnRight {
+    text-align: right;
 }
 
-.algnRight10{
-	text-align:right;
-	width: 10%;
+.algnRight5 {
+    text-align: right;
+    width: 5%;
 }
 
-.algnCenter{
-	text-align:center;
-	width: 5%;
+.algnRight10 {
+    text-align: right;
+    width: 10%;
 }
 
-.remove-button{
-	width: 50%;
+.algnCenter {
+    text-align: center;
+    width: 5%;
 }
 
-.no-records{
-	text-align: center;
-	font-size: 30px;
-
+.remove-button {
+    width: 50%;
 }
 
-.empty-cart{
-	background-color: #383434;
-	margin-top: 10px;
-	color: white;
-	padding: 10px 25px;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 18px;
-	margin: 4px 2px;
-	transition-duration: 0.4s;
-	
+.no-records {
+    text-align: center;
+    font-size: 30px;
 }
 
-.empty-cart:hover{
-	box-shadow: 0 12px 160px 0 rgba(0,0,0,0.24), 0 0px 20px 40px rgba(0,0,0,0.19);
+.empty-cart {
+    background-color: #383434;
+    margin-top: 10px;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
 }
 
-.empty-cart-button{
-	background-color: white; /* Green */
-	border: 2px solid #f44336;
-	color: black;
-	padding: 5px 10px;
-	text-decoration: none;
-	font-size: 16px;
-	margin: 4px 2px;
-	transition-duration: 0.4s;
+.empty-cart:hover {
+    box-shadow: 0 12px 160px 0 rgba(0, 0, 0, 0.24), 0 0px 20px 40px rgba(0, 0, 0, 0.19);
 }
 
-.empty-cart-button:hover{
-	background-color: #f44336;
-  	color: white;
+.empty-cart-button {
+    background-color: white;
+    border: 2px solid #f44336;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    float: right;
+    margin-left: 90%;
 }
 
-input[type="number"]{
-	height: 10%;
+.empty-cart-button:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+input[type="number"] {
+    height: 10%;
     width: 89%;
     text-align: right;
 }
 
+@media screen and (max-width: 600px) {
+    .hideName {
+        display: None;
+    }
+    .product-image {
+        width: 100%;
+        height: 5%;
+    }
+    .empty-cart-button {
+        margin-left: 69%;
+        width: 25%;
+    }
+}

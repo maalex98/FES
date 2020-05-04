@@ -27,8 +27,10 @@ include "./phpfiles/product.php"
             echo "Price: " . $data["price"] . "$";
             ?>
         </h2>
-        <input type="number" value="1" placeholder input-type="numeric">
-        <input type="submit" value="Add To Cart">
+        <form method = "POST">
+        <input type="number" value="1" placeholder input-type="numeric" name="quantity">
+        <input type="submit" value="Add To Cart" name="add-to-cart">
+        </form>
         <h4>
             <?php
             echo "Description";

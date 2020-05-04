@@ -16,7 +16,11 @@ if (isset($_SESSION['login'])) {
 
 	$message = "<a style='border: 2px solid ; border: 30px;' href='profile.php'>
 		<img src='images/" . $profile . "' width='40' height='30' align='middle'>" . $_SESSION['login'] . "
-		</a> <a href='phpfiles/logout.php?logout'>Logout</a>";
+		</a>
+		<a style='border: 2px solid ; border: 30px;' href='cart.php'>
+		<img src='images/cart.png' width='40' height='30' align='middle'> Cart
+		</a>
+		<a href='phpfiles/logout.php?logout'>Logout</a>";
 
 	$old_name = $_SESSION['login'];
 } else {

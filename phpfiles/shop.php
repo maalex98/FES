@@ -2,8 +2,7 @@
     require_once 'dbConnection.php';
 
     $sql = sprintf("SELECT * FROM Products WHERE gender = '%s';", $_GET["gender"]);
-    // $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
-    // $actual_link = $base_url . $_SERVER["REQUEST_URI"];
+    
     global $id, $type, $name,$price, $imagePath, $description, $gender, $event, $season, $style, $color, $trends, $brand;
     global $allTypes, $allColors, $allBrands, $allStyles, $allTrends, $allSeasons;
 

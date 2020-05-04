@@ -13,15 +13,16 @@
 			$resultNumberRows = mysqli_num_rows($result);
 
 			if ($resultNumberRows == 1) {
-				$row = mysqli_fetch_row($result); // fetch_assoc
+				$row = mysqli_fetch_assoc($result); // fetch_assoc
 
 				if (($username == "admin") && ($password =="admin")) {
 					$_SESSION['admin'] = $username;
 					header("location:../adminPage/admin.php");
 				}
 				else {
+					$_SESSION['id_user'] = $row["id_user"];
 					$_SESSION['login'] = $username;
-					$_SESSION['image'] = $row["imagePath"];
+					$_SESSION['cart']= array();
 					header("location:../index.php");
 				}
 			}

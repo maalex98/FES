@@ -1,15 +1,18 @@
 <?php
-include "header.php";
-include "./phpfiles/cart.php"
+require_once 'phpfiles/startSession.php';
+require_once 'phpfiles/orders.php';
+include 'header.php';
 ?>
 
 <div class="testbox">
-    <h5 id="title">Ready to Buy It?</h5>
+    <h5 id="title">Preview Your Orders!</h5>
     <hr />
 </div>
 
-<div class="cart-content">
-    <?php showCart() ?>
+<div class="orders-content">
+    <?php
+    showContent();
+    ?>
 </div>
 
 <br />
@@ -19,6 +22,7 @@ include "./phpfiles/cart.php"
     <div class="share">
         <div class="share-content">
             <p>FOLLOW US</p>
+
             <a class="share-logo" href="https://www.facebook.com">
                 <i class="fa fa-facebook-square"></i>
             </a>
@@ -37,8 +41,9 @@ include "./phpfiles/cart.php"
         </div>
     </div>
 </footer>
+
 </body>
 
-<link rel="stylesheet" type="text/css" href="styles/cart.css" />
+<link rel="stylesheet" type="text/css" href="styles/orders.css" />
 
 </html>

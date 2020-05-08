@@ -1,18 +1,49 @@
 <?php
 require_once 'dbConnection.php';
 
-global $totalQuantity, $totalPrice;
-$data = null;
+global $totalQuantity;
+global $totalPrice;
 
-if (isset($_GET['remove']) && isset($_GET['id'])) {
-	unset($_SESSION["cart"][strval($_GET['id'])]);
-} else if (isset($_GET['empty'])) {
-	unset($_SESSION["cart"]);
-} else if (isset($_POST['updateQuantity']) && isset($_GET["id"])) {
-	if (!empty($_SESSION["cart"])) {
+if (!empty($_SESSION["cart"])) {
+	if (isset($_GET["remove"]) && isset($_GET["id"])) {
+		unset($_SESSION["cart"][strval($_GET["id"])]);
+	} else if (isset($_GET["empty"])) {
+		unset($_SESSION["cart"]);
+	} else if (isset($_POST["updateQuantity"]) && isset($_GET["id"])) {
 		$product = json_decode($_SESSION["cart"][strval($_GET["id"])]);
 		$product->quantity = $_POST["updateQuantity"];
 		$_SESSION["cart"][strval($_GET["id"])] = json_encode($product);
+	} else if (isset($_GET["placeOrder"])) {
+		$productsIds = "";
+		$quantities = "";
+		$status = "placed";
+		$first = true;
+		$price = 0;
+
+		foreach ($_SESSION["cart"] as $key => $value) {
+			$product = json_decode($value);
+
+			if (true == $first) {
+				$productsIds = $productsIds . strval($product->id);
+				$quantities = $quantities . strval($product->quantity);
+				$first = false;
+			} else {
+				$productsIds = $productsIds . "-" . strval($product->id);
+				$quantities = $quantities . "-" . strval($product->quantity);
+			}
+
+			$price += $product->price * $product->quantity;
+		}
+
+		$sql = "INSERT INTO Orders (id_user, ids_products, quantities, total_price, status) VALUES ('".$_SESSION["id_user"]."', '".$productsIds."', '".$quantities."', '".$price."', '".$status."');";
+
+		$result = mysqli_query($conn, $sql);
+		
+		if (false == $result) {
+			echo mysqli_error($conn);
+		}
+
+		unset($_SESSION["cart"]);
 	}
 }
 
@@ -35,6 +66,8 @@ function showCart() {
 				</tr>";
 		showCartProducts();
 		echo "<a class=\"empty-cart-button\" href=\"cart.php?empty\">Empty Cart</a>";
+		echo "</tbody></table>";
+		echo "<a class=\"place-order-button\" href=\"cart.php?placeOrder\">Place Order</a>";
 	}
 }
 

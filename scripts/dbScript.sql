@@ -28,8 +28,9 @@ description VARCHAR(1000)
 CREATE TABLE Orders(
 id_order INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 id_user INT(6) UNSIGNED,
-id_products VARCHAR(100),
-quantity VARCHAR(100),
+ids_products VARCHAR(100),
+quantities VARCHAR(100),
+total_price INT(6) UNSIGNED,
 status VARCHAR(50)
 )
 

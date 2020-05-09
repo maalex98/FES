@@ -16,7 +16,7 @@ if (!empty($_SESSION["cart"])) {
 	} else if (isset($_GET["placeOrder"])) {
 		$productsIds = "";
 		$quantities = "";
-		$status = "placed";
+		$status = "processing";
 		$first = true;
 		$price = 0;
 

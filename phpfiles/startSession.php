@@ -28,7 +28,13 @@ if (isset($_SESSION['login'])) {
 				</div>
 				<div class=\"column_submenu\">
 					<a href=\"orders.php?\">My Orders</a>
-				</div>
+				</div> ";
+
+	if($row["typeUser"] == "admin")
+		$message= $message . "<div class=\"column_submenu\"><a href=\"admin.php\">Admin Panel </a></div> ";
+
+
+	$message= $message."
 			</div>
 		</div>
 	</div>

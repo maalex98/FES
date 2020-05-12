@@ -15,16 +15,10 @@
 			if ($resultNumberRows == 1) {
 				$row = mysqli_fetch_assoc($result);
 
-				if (($username == "admin") && ($password =="admin")) {
-					$_SESSION['admin'] = $username;
-					header("location:../adminPage/admin.php");
-				}
-				else {
 					$_SESSION['id_user'] = $row["id_user"];
 					$_SESSION['login'] = $username;
 					$_SESSION['cart']= array();
 					header("location:../index.php");
-				}
 			}
 			else {
 				header("location:../login.php?InvalidLogin=Invalid username or password!");

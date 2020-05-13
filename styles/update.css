@@ -1,0 +1,119 @@
+.admin-menu  {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.admin-menu  a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    padding: 10.5px 11px;
+    background-color: #5d5858;
+    padding-left: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.admin-menu a:visited {
+    color: white;
+}
+
+.admin-menu a:hover, .admin-menu ul li .current {
+    color: white;
+    background-color: #383434;
+}
+
+
+.update{
+	display: flex;
+	flex-direction: column;
+}
+
+.form-container {
+    width: 60%;
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 0px auto;
+    padding: 10px;
+    border-radius: 8px/7px;
+    border-color: #383434;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
+}
+
+.form-group p {
+    text-align: left;
+    font-family: cursive;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.form-group {
+    margin: 10px 0px 10px 0px;
+}
+
+.form-group input[type="text"] {
+    font-family: cursive;
+    width: 95%;
+    height: 30%;
+    font-size: 16px;
+    text-align: left;
+    margin: 5px;
+    padding: 10px 10px;
+    color: #4c4c4c;
+    border-radius: 5px;
+    border: 1px solid #4c4c4c;
+}
+
+.form-group input[type="file"] {
+    font-family: cursive;
+    width: 93%;
+    height: 30%;
+    font-size: 16px;
+    text-align: left;
+    margin: 5px;
+    padding: 5px 10px;
+    color: #4c4c4c;
+    border: none;
+}
+
+.form-group input[type="password"] {
+    font-family: cursive;
+    width: 93%;
+    font-size: 16px;
+    height: 30%;
+    text-align: left;
+    margin: 5px;
+    padding: 10px 10px;
+    color: #4c4c4c;
+    border-radius: 5px;
+    border: 1px solid #4c4c4c;
+}
+
+.button {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #4c4c4c;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 55%;
+    }
+    .form-group input[type="text"] {
+        width: 83%;
+    }
+    .form-group input[type="password"] {
+        width: 83%;
+    }
+}

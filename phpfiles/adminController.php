@@ -4,9 +4,6 @@ require_once 'dbConnection.php';
 global $conn;
 
 
-
-
-
 function showAdminContent(){
 	global $conn;
 
@@ -42,13 +39,13 @@ function showUsers(){
 		<table class=\"tbl-cart\" cellpadding=\"10\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th class=\"algnLeft hideName\">id_user</th>
-					<th class=\"algnLeft\">Username</th>
-					<th class=\"algnRight5\">First Name</th>
-					<th class=\"algnRight10\">Last Name</th>
-					<th class=\"algnRight10\">Email</th>
-					<th class=\"algnCenter\">User Type</th>
-					<th class=\"algnCenter\"></th>
+					<th>id_user</th>
+					<th>Username</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>User Type</th>
+					<th>Actions</th>
 				</tr>";
 	$sql = "SELECT * FROM Users";
 	$result = mysqli_query($conn, $sql);
@@ -65,7 +62,10 @@ function showUsers(){
 						<td>".$row["lastname"]."</td>
 						<td>".$row["email"]."</td>
 						<td>".$row["typeUser"]."</td>
-						<td><a href=\"admin.php?page=users&id=".$row["id_user"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a></td>
+						<td>
+						<a href=\"admin.php?page=users&id=".$row["id_user"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
+						<a href=\"update.php?page=users&id=".$row["id_user"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Update</a>
+						</td>
 						</tr>";
             	}
           	} 
@@ -76,21 +76,22 @@ echo "</tbody></table>";
 function showProducts(){
 	global $conn;
 	echo "
-		<table class=\"tbl-cart\" cellpadding=\"10\" cellspacing=\"1\">
+		<table class=\"tbl-cart\" cellpadding=\"3\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th class=\"algnLeft hideName\">id_product</th>
-					<th class=\"algnLeft\">type</th>
-					<th class=\"algnLeft\">name</th>
-					<th class=\"algnRight5\">price</th>
-					<th class=\"algnRight10\">image_path</th>
-					<th class=\"algnRight10\">gender</th>
-					<th class=\"algnCenter\">event</th>
-					<th class=\"algnCenter\">season</th>
-					<th class=\"algnCenter\">style</th>
-					<th class=\"algnCenter\">brand</th>
-					<th class=\"algnCenter\">color</th>
-					<th class=\"algnCenter\">trends</th>
+					<th>id_product</th>
+					<th>type</th>
+					<th>name</th>
+					<th>price</th>
+					<th>image_path</th>
+					<th>gender</th>
+					<th>event</th>
+					<th>season</th>
+					<th>style</th>
+					<th>brand</th>
+					<th>color</th>
+					<th>trends</th>
+					<th>Actions</th>
 				</tr>";
 	$sql = "SELECT * FROM Products";
 	$result = mysqli_query($conn, $sql);
@@ -113,11 +114,30 @@ function showProducts(){
 						<td>".$row["brand"]."</td>
 						<td>".$row["color"]."</td>
 						<td>".$row["trends"]."</td>
-						<td><a href=\"admin.php?page=products&id=".$row["id_product"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a></td>
+						<td>
+						<a href=\"update.php?page=products&id=".$row["id_product"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Update</a>
+						<a href=\"admin.php?page=products&id=".$row["id_product"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
+						</td>
 						</tr>";
             	}
           	} 
     }
+    echo
+		"<form method=\"POST\" action=\"phpfiles/updateController.php\" class=\"form-container\">
+        <td></td>
+        <td><input type=\"text\" name=\"type\"></td>
+        <td><input type=\"text\" name=\"name\"></td>
+        <td><input type=\"text\" name=\"price\"></td>
+        <td><input type=\"text\" name=\"image_path\"></td>
+        <td><input type=\"text\" name=\"gender\"></td>
+        <td><input type=\"text\" name=\"event\"></td>
+        <td><input type=\"text\" name=\"season\"></td>
+        <td><input type=\"text\" name=\"style\"></td>
+        <td><input type=\"text\" name=\"brand\"></td>
+        <td><input type=\"text\" name=\"color\"></td>
+        <td><input type=\"text\" name=\"trends\"></td>
+        <td><input type=\"submit\" name=\"addProduct\" value=\"Add\" class=\"button\">
+		</form>";
 echo "</tbody></table>";
 
 }
@@ -128,13 +148,14 @@ function showOrders(){
 		<table class=\"tbl-cart\" cellpadding=\"10\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th class=\"algnLeft hideName\">id_order</th>
-					<th class=\"algnLeft\">id_user</th>
-					<th class=\"algnRight5\">ids_products</th>
-					<th class=\"algnRight10\">quantities</th>
-					<th class=\"algnRight10\">status</th>
-					<th class=\"algnCenter\">total_price</th>
-					<th class=\"algnCenter\"></th>
+					<th>id_order</th>
+					<th>id_user</th>
+					<th>ids_products</th>
+					<th>quantities</th>
+					<th>status</th>
+					<th>total_price</th>
+					<th>Actions</th>
+					<th>Update Status</th>
 				</tr>";
 	$sql = "SELECT * FROM Orders";
 	$result = mysqli_query($conn, $sql);
@@ -151,7 +172,20 @@ function showOrders(){
 						<td>".$row["quantities"]."</td>
 						<td>".$row["status"]."</td>
 						<td>".$row["total_price"]."</td>
-						<td><a href=\"admin.php?page=orders&id=".$row["id_order"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a></td>
+						<td>
+							<a href=\"admin.php?page=orders&id=".$row["id_order"]." \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
+						</td>
+						<td>
+							<form method=\"POST\" action=\"phpfiles/updateController.php?id_order=".$row["id_order"]."\">
+								<select name=\"status\" class=\"choices\">
+								  <option value=\"processing\">processing</option>
+								  <option value=\"processed\">processed</option>
+								  <option value=\"shipped\">shipped</option>
+								  <option value=\"delivered\">delivered</option>
+								</select>
+								<input type=\"submit\" value=\"Update\" name=\"commitOrders\">
+							</form>
+						</td>
 						</tr>";
             	}
           	} 

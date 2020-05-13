@@ -1,30 +1,40 @@
-.admin-menu ul {
+.admin-menu  {
 	margin: 0;
 	padding: 0;
-	width:185px;
+	display:flex;
+	flex-direction: row;
 	list-style-type: none;
 }
 
-.admin-menu ul li a {
+.admin-menu  a {
 	text-decoration: none;
 	color: white;
+	width: 100%;
 	padding: 10.5px 11px;
 	background-color: #5d5858;
-	display:block;
 	padding-left: 20px;
 	border: 1px solid black;
+	text-align: center;
 }
 
-.admin-menu ul li a:visited {
+.admin-menu a:visited {
 	color: white;
 }
 
-.admin-menu ul li a:hover, .admin-menu ul li .current {
+.admin-menu a:hover, .admin-menu ul li .current {
 	color: white;
 	background-color: #383434;
 }
 
 .admin{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+}
+
+input[type= "text"]{
+	width: 100%;
+}
+
+tr td{
+	text-align: center;
 }

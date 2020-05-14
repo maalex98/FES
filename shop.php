@@ -27,6 +27,12 @@ getProductsFromDatabase();
     </div>
 </div>
 
+<div class="shop-pagination">
+    <?php
+    showPages();
+    ?>
+</div>
+
 <br />
 <br />
 <br />

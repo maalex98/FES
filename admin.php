@@ -20,12 +20,6 @@ include "./phpfiles/adminController.php"
 	</div>
 </div>
 
-<br>
-
-
-
-
-
 <footer>
 	<div class="share">
 		<div class="share-content">

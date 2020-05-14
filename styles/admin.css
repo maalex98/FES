@@ -1,40 +1,47 @@
-.admin-menu  {
-	margin: 0;
-	padding: 0;
-	display:flex;
-	flex-direction: row;
-	list-style-type: none;
+.admin-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
 }
 
-.admin-menu  a {
-	text-decoration: none;
-	color: white;
-	width: 100%;
-	padding: 10.5px 11px;
-	background-color: #5d5858;
-	padding-left: 20px;
-	border: 1px solid black;
-	text-align: center;
+.admin-menu a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    padding: 10.5px 11px;
+    background-color: #5d5858;
+    padding-left: 20px;
+    border: 1px solid black;
+    text-align: center;
 }
 
 .admin-menu a:visited {
-	color: white;
+    color: white;
 }
 
-.admin-menu a:hover, .admin-menu ul li .current {
-	color: white;
-	background-color: #383434;
+.admin-menu a:hover,
+.admin-menu ul li .current {
+    color: white;
+    background-color: #383434;
 }
 
-.admin{
-	display: flex;
-	flex-direction: column;
+.admin {
+    display: flex;
+    flex-direction: column;
 }
 
-input[type= "text"]{
-	width: 100%;
+input[type="text"] {
+    width: 100%;
 }
 
-tr td{
-	text-align: center;
+input[type="file"] {
+    margin: 0px auto;
+    padding: 0px;
+    width: 100%;
+}
+
+tr td {
+    text-align: center;
 }

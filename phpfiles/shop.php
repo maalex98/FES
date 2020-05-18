@@ -5,7 +5,7 @@ global $id, $type, $name, $price, $imagePath, $description, $gender, $event, $se
 global $allTypes, $allColors, $allBrands, $allStyles, $allTrends, $allSeasons;
 global $pageno;
 global $totalProducts;
-$numOfProductsPerPage = 2;
+$numOfProductsPerPage = 6;
 
 if (isset($_GET['pageno'])) {
     $pageno = $_GET['pageno'];

@@ -1,11 +1,15 @@
 <?php
 require_once 'dbConnection.php';
 
-$data = null;
+$sql = "UPDATE products SET viewed_by = viewed_by + 1 WHERE id_product = " . $_GET["product_id"] . ";";
+$result = mysqli_query($conn, $sql);
 
+$data = null;
 if(isset($_POST["add-to-cart"])){
     addToCart($_POST["quantity"]);
 }
+
+
 
 function showProduct() {
     global $conn;
@@ -28,6 +32,9 @@ function showProduct() {
         echo "Error!";
         /* Error Handling */
     }
+
+
+
 }
 
 function addToCart($quantity) {

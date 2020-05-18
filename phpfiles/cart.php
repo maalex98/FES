@@ -32,6 +32,9 @@ if (!empty($_SESSION["cart"])) {
 				$quantities = $quantities . "-" . strval($product->quantity);
 			}
 
+			$sql = "UPDATE products SET bought_by = bought_by + ".$product->quantity." WHERE id_product = " . $product->id . ";";
+			$result = mysqli_query($conn, $sql);
+
 			$price += $product->price * $product->quantity;
 		}
 

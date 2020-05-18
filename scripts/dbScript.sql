@@ -21,7 +21,9 @@ season VARCHAR(20),
 style VARCHAR(50),
 brand VARCHAR(50),
 trends VARCHAR(50),
-description VARCHAR(1000)
+description VARCHAR(1000),
+viewed_by INT(6),
+bought_by INT(6)
 )
 
 CREATE TABLE Orders(
@@ -32,5 +34,6 @@ quantities VARCHAR(100),
 total_price INT(6) UNSIGNED,
 status VARCHAR(50)
 )
+
 
 ALTER TABLE `Orders` ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `Users`(`id_user`) ON DELETE CASCADE ON UPDATE RESTRICT;

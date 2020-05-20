@@ -51,8 +51,7 @@ function getProductsFromDatabase()
     $stmtFormat = '';
     $stmtInfo = array();
 
-    function checkFilter($filterName)
-    {
+    function checkFilter($filterName) {
         global $stmtFormat, $whereClause, $stmtInfo;
 
         if (isset($_GET[$filterName]) && $_GET[$filterName] != "none") {

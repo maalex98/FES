@@ -19,6 +19,12 @@
 					$_SESSION['login'] = $username;
 					$_SESSION['cart']= array();
 					header("location:../index.php");
+
+					if ($row["typeUser"] == "admin") {
+						$_SESSION["admin"] = true;
+					} else {
+						$_SESSION["admin"] = false;
+					}
 			}
 			else {
 				header("location:../login.php?InvalidLogin=Invalid username or password!");

@@ -3,8 +3,12 @@ include 'header.php';
 include "./phpfiles/updateController.php"
 ?>
 
+<?php
+if (true == $_SESSION["admin"]) {
+?>
+
 <div class="testbox">
-	<h5 id="title">Update Form</h5>
+	<h5 id="title">Admin Interface - Update Form</h5>
 	<hr />
 </div>
 
@@ -20,6 +24,18 @@ include "./phpfiles/updateController.php"
 	</div>
 </div>
 
+<?php
+} else {
+?>
+
+<div class="testbox">
+	<h5 id="title">Err @ You're Not Authorized To Access This Page!</h5>
+	<hr />
+</div>
+
+<?php
+}
+?>
 
 <footer>
 	<div class="share">

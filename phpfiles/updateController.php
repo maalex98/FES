@@ -1,53 +1,50 @@
 <?php
 require_once 'dbConnection.php';
 
-if (isset($_POST["commitUsers"])) {
-	global $conn;
-	$sql = "UPDATE users SET username='" . $_POST["username"] . "', firstname='" . $_POST["firstname"] . "', lastname='" . $_POST["lastname"] . "', typeUser='" . $_POST["usertype"] . "', email='" . $_POST["email"] . "' WHERE id_user=" . $_GET["id_user"];
-	echo $sql;
-	$result = mysqli_query($conn, $sql);
-	header("location:../admin.php?page=users");
-}
-
-if (isset($_POST["editUserType"])) {	
-	$sql = "UPDATE users SET typeUser = '".$_POST["type"]."' WHERE id_user = ".$_GET["id_user"].";";
-	$result = mysqli_query($conn, $sql);
-	header("location:../admin.php?page=users");
-}
-
-if (isset($_POST["commitProducts"])) {
-	global $conn;
-	$sql = "UPDATE products SET name='" . $_POST["name"] . "', image_path='" . $_POST["image_path"] . "', price='" . $_POST["price"] . "', gender='" . $_POST["gender"] . "', type='" . $_POST["type"] . "', color='" . $_POST["color"] . "', event='" . $_POST["event"] . "', season='" . $_POST["season"] . "', style='" . $_POST["style"] . "', brand='" . $_POST["brand"] . "', trends='" . $_POST["trends"] . "' WHERE id_product=" . $_GET["id_product"];
-	$result = mysqli_query($conn, $sql);
-	header("location:../admin.php?page=products");
-}
-
-if (isset($_POST["commitOrders"])) {
-	$sql = "UPDATE orders SET status='" . $_POST["status"] . "' WHERE id_order=" . $_GET["id_order"];
-	$result = mysqli_query($conn, $sql);
-	header("location:../admin.php?page=orders");
-}
-
-if (isset($_POST["addProduct"])) {
-	$imagePath = "";
-
-	if (isset($_FILES["image_path"]) && isset($_POST["gender"])) {
-		$baseDir = $_SERVER["DOCUMENT_ROOT"] . "\\FES\\images\\" . $_POST["gender"] . "\\";
-		$imagePath = $baseDir . $_FILES["image_path"]["name"];
-		move_uploaded_file($_FILES["image_path"]["tmp_name"], $imagePath);
+if (true == $_SESSION["admin"]) {
+	if (isset($_POST["commitUsers"])) {
+		global $conn;
+		$sql = "UPDATE users SET username='" . $_POST["username"] . "', firstname='" . $_POST["firstname"] . "', lastname='" . $_POST["lastname"] . "', typeUser='" . $_POST["usertype"] . "', email='" . $_POST["email"] . "' WHERE id_user=" . $_GET["id_user"];
+		echo $sql;
+		$result = mysqli_query($conn, $sql);
+		header("location:../admin.php?page=users");
 	}
 
-	$sql = "INSERT INTO products (type, name, price, image_path, gender, event, season, style, brand, color, trends, description) VALUES ('" . $_POST["type"] . "','" . $_POST["name"] . "', '" . $_POST["price"] . "','" . $imagePath . "','" . $_POST["gender"] . "','" . $_POST["event"] . "' ,'" . $_POST["season"] . "','" . $_POST["style"] . "','" . $_POST["brand"] . "','" . $_POST["color"] . "','" . $_POST["trends"] . "','.')";
-	$result = mysqli_query($conn, $sql);
-	header("location:../admin.php?page=products");
+	if (isset($_POST["editUserType"])) {
+		$sql = "UPDATE users SET typeUser = '" . $_POST["type"] . "' WHERE id_user = " . $_GET["id_user"] . ";";
+		$result = mysqli_query($conn, $sql);
+		header("location:../admin.php?page=users");
+	}
+
+	if (isset($_POST["commitProducts"])) {
+		global $conn;
+		$sql = "UPDATE products SET name='" . $_POST["name"] . "', image_path='" . $_POST["image_path"] . "', price='" . $_POST["price"] . "', gender='" . $_POST["gender"] . "', type='" . $_POST["type"] . "', color='" . $_POST["color"] . "', event='" . $_POST["event"] . "', season='" . $_POST["season"] . "', style='" . $_POST["style"] . "', brand='" . $_POST["brand"] . "', trends='" . $_POST["trends"] . "' WHERE id_product=" . $_GET["id_product"];
+		$result = mysqli_query($conn, $sql);
+		header("location:../admin.php?page=products");
+	}
+
+	if (isset($_POST["commitOrders"])) {
+		$sql = "UPDATE orders SET status='" . $_POST["status"] . "' WHERE id_order=" . $_GET["id_order"];
+		$result = mysqli_query($conn, $sql);
+		header("location:../admin.php?page=orders");
+	}
+
+	if (isset($_POST["addProduct"])) {
+		$imagePath = "";
+
+		if (isset($_FILES["image_path"]) && isset($_POST["gender"])) {
+			$baseDir = $_SERVER["DOCUMENT_ROOT"] . "\\FES\\images\\" . $_POST["gender"] . "\\";
+			$imagePath = $baseDir . $_FILES["image_path"]["name"];
+			move_uploaded_file($_FILES["image_path"]["tmp_name"], $imagePath);
+		}
+
+		$sql = "INSERT INTO products (type, name, price, image_path, gender, event, season, style, brand, color, trends, description) VALUES ('" . $_POST["type"] . "','" . $_POST["name"] . "', '" . $_POST["price"] . "','" . $imagePath . "','" . $_POST["gender"] . "','" . $_POST["event"] . "' ,'" . $_POST["season"] . "','" . $_POST["style"] . "','" . $_POST["brand"] . "','" . $_POST["color"] . "','" . $_POST["trends"] . "','.')";
+		$result = mysqli_query($conn, $sql);
+		header("location:../admin.php?page=products");
+	}
 }
 
-
-
-function showUpdateContent()
-{
-	global $conn;
-
+function showUpdateContent() {
 	if (!empty($_GET["page"])) {
 		if ($_GET["page"] == "users") {
 			usersUpdateForm($_GET["id"]);
@@ -57,16 +54,18 @@ function showUpdateContent()
 	}
 }
 
-
-function usersUpdateForm($id_user)
-{
+function usersUpdateForm($id_user) {
 	global $conn;
+
 	$sql = "SELECT * FROM Users where id_user = " . $id_user . ";";
 	$result = mysqli_query($conn, $sql);
+
 	if (true == $result) {
 		$numOfRows = mysqli_num_rows($result);
+
 		if ($numOfRows == 1) {
 			$row = mysqli_fetch_assoc($result);
+
 			echo
 				"<form method=\"POST\" action=\"phpfiles/updateController.php?id_user=" . $id_user . "\" class=\"form-container\">
 				    <div class=\"form-group\">
@@ -100,15 +99,18 @@ function usersUpdateForm($id_user)
 	}
 }
 
-function productsUpdateForm($id_product)
-{
+function productsUpdateForm($id_product) {
 	global $conn;
+
 	$sql = "SELECT * FROM Products where id_product = " . $id_product . ";";
 	$result = mysqli_query($conn, $sql);
+
 	if (true == $result) {
 		$numOfRows = mysqli_num_rows($result);
+
 		if ($numOfRows == 1) {
 			$row = mysqli_fetch_assoc($result);
+
 			echo
 				"<form method=\"POST\" action=\"phpfiles/updateController.php?id_product=" . $id_product . "\" class=\"form-container\">
 				    <div class=\"form-group\">

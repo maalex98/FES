@@ -22,8 +22,8 @@ style VARCHAR(50),
 brand VARCHAR(50),
 trends VARCHAR(50),
 description VARCHAR(1000),
-viewed_by INT(6),
-bought_by INT(6)
+viewed_by INT(6) DEFAULT 0,
+bought_by INT(6) DEFAULT 0
 )
 
 CREATE TABLE Orders(

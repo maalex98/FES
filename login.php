@@ -1,5 +1,6 @@
 <?php
-include 'header.php';
+include "header.php";
+include "phpfiles/login.php"
 ?>
 
 <div class="testbox">
@@ -27,27 +28,11 @@ include 'header.php';
 			<button type="submit" class="btn" name="signin">Log in</button>
 		</div>
 
-		<span class="error">
+		<p class="error">
 			<?php
-			if (@$_GET['LoginR'] == true) {
+				showError();
 			?>
-				<div>
-					<h4><?php echo $_GET['LoginR'] ?></h4>
-				</div>
-			<?php
-			}
-			?>
-
-			<?php
-			if (@$_GET['InvalidLogin'] == true) {
-			?>
-				<div>
-					<?php echo $_GET['InvalidLogin'] ?>
-				</div>
-			<?php
-			}
-			?>
-		</span>
+		</p>
 
 		<a href="register.php">Create Account</a>
 	</form>

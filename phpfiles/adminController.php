@@ -2,7 +2,7 @@
 require_once 'dbConnection.php';
 
 $pageno = 0;
-$numOfItemsPerPage = 10;
+$numOfItemsPerPage = 1;
 $total = 0;
 
 function showAdminContent() {

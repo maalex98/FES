@@ -1,48 +1,48 @@
 <?php
-	if (isset($_POST['register'])) {
-		require 'dbConnection.php';
+require "dbConnection.php";
 
-		if (isset($_POST['username']) && isset($_POST['password']) &&
-			isset($_POST['firstname']) && isset($_POST['lastname']) &&
-			isset($_POST['email']) && isset($_POST['repeatpassword'])) {
+if (isset($_POST["register"])) {
 
-			$name = $_POST['firstname'];
-			$surname = $_POST['lastname'];
-			$username = $_POST['username'];
-			$email = $_POST['email'];
-			$password = $_POST['password'];
-			$repeatPassword = $_POST['repeatpassword'];
-			$typeUser = "user";
+	if (!empty($_POST["username"]) && !empty($_POST["email"]) &&
+		!empty($_POST["firstname"]) && !empty($_POST["lastname"]) &&
+		!empty($_POST["password"]) && !empty($_POST["repeatpassword"]) &&
+		!empty($_POST["country"]) && !empty($_POST["address"])) {
 
-			$sql = "SELECT * FROM users WHERE username = '".$username."'";
+		if ($_POST["password"] == $_POST["repeatpassword"]) {
 
+			$sql = "SELECT * FROM Users WHERE username = '" . $_POST["username"] . "';";
 			$result = mysqli_query($conn, $sql);
 			$resultNumberRows = mysqli_num_rows($result);
 
-			if ($resultNumberRows == 1) {
-				header("location:../register.php?UserExist=User already exists!");
-			}
-			else {
-				if ($password != $repeatPassword) {
-					header("location:../register.php?InvalidPass=Incorrect password! Try again!");
+			if ($resultNumberRows == 0) {
+				$passwordMd5 = password_hash($_POST["password"], PASSWORD_DEFAULT);
+				$userType = "user";
+
+				$sql = "INSERT INTO users (username, password, firstname, lastname, email, country, address, usertype)
+						VALUES ('" . $_POST["username"] . "', '" . $passwordMd5 . "', '" . $_POST["firstname"] . "',
+						'" . $_POST["lastname"] . "', '" . $_POST["email"] . "', '" . $_POST["country"] . "',
+						'" . $_POST["address"] . "', '" . $userType . "');";
+
+				$result = mysqli_query($conn, $sql);
+
+				if ($result == true) {
+					header("location:../login.php?info=Registration complete! You can Login now.");
+				} else {
+					header("location:../register.php?error=Cannot create account!");
 				}
-				else {
-					$sql = "INSERT INTO users (username, password, firstname, lastname, typeUser, email) VALUES ('".$username."','".$password."', '".$name."','".$surname."','".$typeUser."','".$email."')";
-
-					$result = mysqli_query($conn, $sql);
-
-					if ($result) {
-						header("location:../login.php?LoginR=Registration complete! You can Login now.");
-					} else {
-						header("location:../register.php?UserExist=Cannot create account!");
-					}
-
-					mysqli_close($conn);
-				}
+			} else {
+				header("location:../register.php?error=User already exists!");
 			}
+		} else {
+			header("location:../register.php?error=Passwords Mismatch!");
 		}
+	} else {
+		header("location:../register.php?error=Please Complete All Fields!");
 	}
-	else {
-		exit();
+}
+
+function showError() {
+	if (isset($_GET["error"])) {
+		echo $_GET["error"];
 	}
-?>
+}

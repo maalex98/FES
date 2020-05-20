@@ -1,48 +1,11 @@
 <?php
-include 'header.php';
+include "header.php";
+include "phpfiles/register.php";
 ?>
 
 <div class="testbox">
     <h5 id="title">Registration</h5>
     <hr />
-
-    <?php
-    if (@$_GET['UserExist'] == true) {
-    ?>
-        <div>
-            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
-            <?php echo $_GET['UserExist'] ?>
-        </div>
-    <?php
-    }
-    if (@$_GET['InvalidPass'] == true) {
-    ?>
-        <div>
-            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
-            <?php echo $_GET['InvalidPass'] ?>
-        </div>
-
-    <?php
-    }
-    if (@$_GET['InvalidEmail'] == true) {
-    ?>
-        <div>
-            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
-            <?php echo $_GET['InvalidEmail'] ?>
-        </div>
-
-    <?php
-    }
-    if (@$_GET['InvalidEmailPas'] == true) {
-    ?>
-        <div>
-            <img style="height:2%; width:2%;" src="images/wrong.jpg" />
-            <?php echo $_GET['InvalidEmailPas'] ?>
-        </div>
-
-    <?php
-    }
-    ?>
 </div>
 
 <div class="form-wrapper">
@@ -51,8 +14,6 @@ include 'header.php';
     </div>
 
     <form method="POST" action="phpfiles/register.php">
-        <span id="eroare"></span>
-
         <div class="input-group">
             <label>First Name</label>
             <input type="text" name="firstname">
@@ -74,12 +35,22 @@ include 'header.php';
         </div>
 
         <div class="input-group">
+            <label>Country</label>
+            <input type="text" name="country">
+        </div>
+
+        <div class="input-group">
+            <label>Address - County, City, Street and Street Number</label>
+            <input type="text" name="address">
+        </div>
+
+        <div class="input-group">
             <label>Password</label>
             <input type="password" name="password">
         </div>
 
         <div class="input-group">
-            <label>Confirm password</label>
+            <label>Confirm Password</label>
             <input type="password" name="repeatpassword">
         </div>
 
@@ -87,11 +58,41 @@ include 'header.php';
             <button type="submit" class="btn" name="register">Register</button>
         </div>
 
+        <p class="error">
+            <?php
+                showError();
+            ?>
+        </p>
+
         <p>
             Already a member? <a href="login.php">Sign in</a>
         </p>
     </form>
 </div>
+
+<footer>
+    <div class="share">
+        <div class="share-content">
+            <p>FOLLOW US</p>
+            <a class="share-logo" href="https://www.facebook.com">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+
+            <a class="share-logo" href="https://www.twitter.com">
+                <i class="fa fa-twitter-square"></i>
+            </a>
+
+            <a class="share-logo" href="https://www.instagram.com">
+                <i class="fa fa-youtube-square"></i>
+            </a>
+
+            <a class="share-logo" href="https://www.instagram.com">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
 </body>
 
 <link rel="stylesheet" type="text/css" href="styles/account.css" />

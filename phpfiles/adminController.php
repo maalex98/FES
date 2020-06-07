@@ -2,7 +2,7 @@
 require_once 'dbConnection.php';
 
 $pageno = 0;
-$numOfItemsPerPage = 1;
+$numOfItemsPerPage = 10;
 $total = 0;
 
 function showAdminContent() {
@@ -53,8 +53,11 @@ function showUsers() {
 					<th>Username</th>
 					<th>First Name</th>
 					<th>Last Name</th>
+					<th>Country</th>
+					<th>Address</th>
 					<th>Email</th>
 					<th>User Type</th>
+					<th>created_at</th>
 					<th>Actions</th>
 					<th>Rank-Up User</th>
 				</tr>";
@@ -78,8 +81,11 @@ function showUsers() {
 							<td>" . $row["username"] . "</td>
 							<td>" . $row["firstname"] . "</td>
 							<td>" . $row["lastname"] . "</td>
+							<td>" . $row["country"] . "</td>
+							<td>" . $row["address"] . "</td>
 							<td>" . $row["email"] . "</td>
-							<td>" . $row["typeUser"] . "</td>
+							<td>" . $row["usertype"] . "</td>
+							<td>" . $row["created_at"] . "</td>
 							<td>
 								<a href=\"admin.php?page=users&id=" . $row["id_user"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
 								<a href=\"update.php?page=users&id=" . $row["id_user"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Update</a>
@@ -116,7 +122,6 @@ function showProducts() {
 	    "<table class=\"tbl-cart\" cellpadding=\"3\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th>id_product</th>
 					<th>type</th>
 					<th>name</th>
 					<th>price</th>
@@ -127,7 +132,8 @@ function showProducts() {
 					<th>style</th>
 					<th>brand</th>
 					<th>color</th>
-					<th>trends</th>
+					<th>fabric</th>
+					<th>stock</th>
 					<th>Actions</th>
 				</tr>";
 
@@ -145,7 +151,6 @@ function showProducts() {
             		($it < ($pageno * $numOfItemsPerPage))) {
 					echo
 						"<tr>
-							<td>" . $row["id_product"] . "</td>
 							<td>" . $row["type"] . "</td>
 							<td>" . $row["name"] . "</td>
 							<td>" . $row["price"] . "</td>
@@ -156,7 +161,8 @@ function showProducts() {
 							<td>" . $row["style"] . "</td>
 							<td>" . $row["brand"] . "</td>
 							<td>" . $row["color"] . "</td>
-							<td>" . $row["trends"] . "</td>
+							<td>" . $row["fabric"] . "</td>
+							<td>" . $row["stock"] . "</td>
 							<td>
 								<a href=\"update.php?page=products&id=" . $row["id_product"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Update</a>
 								<a href=\"admin.php?page=products&id=" . $row["id_product"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
@@ -173,7 +179,6 @@ function showProducts() {
 
 	echo
 		"<form method=\"POST\" action=\"phpfiles/updateController.php\" class=\"form-container\" enctype=\"multipart/form-data\">
-			<td></td>
 			<td><input type=\"text\" name=\"type\"></td>
 			<td><input type=\"text\" name=\"name\"></td>
 			<td><input type=\"text\" name=\"price\"></td>
@@ -184,7 +189,8 @@ function showProducts() {
 			<td><input type=\"text\" name=\"style\"></td>
 			<td><input type=\"text\" name=\"brand\"></td>
 			<td><input type=\"text\" name=\"color\"></td>
-			<td><input type=\"text\" name=\"trends\"></td>
+			<td><input type=\"text\" name=\"fabric\"></td>
+			<td><input type=\"text\" name=\"stock\"></td>
 			<td><input type=\"submit\" name=\"addProduct\" value=\"Add\" class=\"button\">
 		</form>";
 	echo "</tbody></table>";

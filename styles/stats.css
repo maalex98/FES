@@ -1,0 +1,24 @@
+.stats a{
+	text-decoration: none;
+}
+
+.stats-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.stats-item{
+margin: 5px;
+}
+
+.stats-button{
+	font-size: 12px;
+	transition-duration: 0.4s;
+	border-radius: 10px;
+}
+
+
+.stats-button:hover{
+	background-color: #383434; /* Green */
+  	color: white;
+}

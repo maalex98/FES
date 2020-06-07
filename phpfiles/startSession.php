@@ -31,7 +31,8 @@ if (isset($_SESSION["username"])) {
 						</div> ";
 	
 		if($row["usertype"] == "admin")
-			$message = $message . "<div class=\"column_submenu\"><a href=\"admin.php\">Admin Panel </a></div> ";
+			$message = $message . " <div class=\"column_submenu\"><a href=\"admin.php\">Admin Panel </a></div>
+									<div class=\"column_submenu\"><a href=\"stats.php\">Statistics </a></div> ";
 	
 		$message = $message . 
 					"</div>

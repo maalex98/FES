@@ -62,6 +62,9 @@ include 'header.php';
 			<a class="share-logo" href="https://www.instagram.com">
 				<i class="fa fa-instagram"></i>
 			</a>
+			<a class="share-logo" href="rss.php">
+				<i class="fa fa-rss"></i>
+			</a>
 		</div>
 	</div>
 </footer>

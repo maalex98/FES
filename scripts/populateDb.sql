@@ -1,2 +1,2 @@
-INSERT INTO `Products`(`type`, `name`,`price`, `description`, `image_path`, `gender`, `event`, `season`, `style`, `brand`, `color`, `fabric`,`stock`) 
-VALUES ("papuc", "Sandale de piele",10 ,"Sandale fabricate din piele, cu benzi înguste care se leagă în jurul gleznelor.","images/women/sandale.jpg","women","evening","summer","modern","H&M","brown","lana","100");
+INSERT INTO `Products`(`name`, `image_path`, `price`, `brand`, `gender`, `type`, `color`, `event`, `style`, `season`, `fabric`, `description`, `stock`)
+VALUES ("Sandale de Piele", "images/women_products/sandale.jpg", 200, "Zara", "female", "Papuc", "Rosu", "Evening", "Modern", "Vara", "Piele", "Sandale fabricate din piele, cu benzi înguste care se leagă în jurul gleznelor.", 20);

@@ -19,7 +19,7 @@ include "./phpfiles/product.php"
         ?>
         <h2>
             <?php
-            echo $data["name"] . " (" . ucfirst($data["gender"]) . ") - " .  $data["brand"] . " - " . ucfirst($data["color"]);
+            echo $data["name"] . " - " . ucfirst($data["gender"]) . " - " .  $data["brand"] . " - " . ucfirst($data["color"]);
             ?>
         </h2>
         <h2>
@@ -27,10 +27,22 @@ include "./phpfiles/product.php"
             echo "Price: " . $data["price"] . "$";
             ?>
         </h2>
+
+        <?php
+        if (0 < $data["stock"]) {
+        ?>
         <form method = "POST">
-        <input type="number" value="1" placeholder input-type="numeric" name="quantity">
-        <input type="submit" value="Add To Cart" name="add-to-cart">
+            <input type="number" value="1" placeholder input-type="numeric" name="quantity">
+            <input type="submit" value="Add To Cart" name="add-to-cart">
         </form>
+        <?php
+        } else {
+        ?>
+        <p style="color:red"><b>Out of Stock!</b><p>
+        <?php
+        }
+        ?>
+        
         <h4>
             <?php
             echo "Description";
@@ -39,17 +51,22 @@ include "./phpfiles/product.php"
         <ul class="product-description">
             <li>
                 <?php
+                echo "Type - " . ucfirst($data["type"]);
+                ?>
+            </li>
+            <li>
+                <?php
+                echo "Fabric - " . ucfirst($data["fabric"]);
+                ?>
+            </li>
+            <li>
+                <?php
                 echo "Season - " . ucfirst($data["season"]);
                 ?>
             </li>
             <li>
                 <?php
                 echo "Style - " . ucfirst($data["style"]);
-                ?>
-            </li>
-            <li>
-                <?php
-                echo "Trend - " . ucfirst($data["trends"]);
                 ?>
             </li>
             <li>
@@ -67,6 +84,7 @@ include "./phpfiles/product.php"
 <br />
 <br />
 <br />
+
 <footer>
     <div class="share">
         <div class="share-content">

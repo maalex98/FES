@@ -1,5 +1,5 @@
 <?php
-require_once 'dbConnection.php';
+require_once "dbConnection.php";
 
 $pageno = 0;
 $numOfItemsPerPage = 10;
@@ -49,7 +49,7 @@ function showUsers() {
 		"<table class=\"tbl-cart\" cellpadding=\"10\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th>id_user</th>
+					<th>Id User</th>
 					<th>Username</th>
 					<th>First Name</th>
 					<th>Last Name</th>
@@ -57,7 +57,7 @@ function showUsers() {
 					<th>Address</th>
 					<th>Email</th>
 					<th>User Type</th>
-					<th>created_at</th>
+					<th>Created At</th>
 					<th>Actions</th>
 					<th>Rank-Up User</th>
 				</tr>";
@@ -122,18 +122,18 @@ function showProducts() {
 	    "<table class=\"tbl-cart\" cellpadding=\"3\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th>type</th>
-					<th>name</th>
-					<th>price</th>
-					<th>image_path</th>
-					<th>gender</th>
-					<th>event</th>
-					<th>season</th>
-					<th>style</th>
-					<th>brand</th>
-					<th>color</th>
-					<th>fabric</th>
-					<th>stock</th>
+					<th>Type</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Image Path</th>
+					<th>Gender</th>
+					<th>Event</th>
+					<th>Season</th>
+					<th>Style</th>
+					<th>Brand</th>
+					<th>Color</th>
+					<th>Fabric</th>
+					<th>Stock</th>
 					<th>Actions</th>
 				</tr>";
 
@@ -151,17 +151,17 @@ function showProducts() {
             		($it < ($pageno * $numOfItemsPerPage))) {
 					echo
 						"<tr>
-							<td>" . $row["type"] . "</td>
-							<td>" . $row["name"] . "</td>
+							<td>" . ucfirst($row["type"]) . "</td>
+							<td>" . ucfirst($row["name"]) . "</td>
 							<td>" . $row["price"] . "</td>
 							<td>" . $row["image_path"] . "</td>
-							<td>" . $row["gender"] . "</td>
-							<td>" . $row["event"] . "</td>
-							<td>" . $row["season"] . "</td>
-							<td>" . $row["style"] . "</td>
-							<td>" . $row["brand"] . "</td>
-							<td>" . $row["color"] . "</td>
-							<td>" . $row["fabric"] . "</td>
+							<td>" . ucfirst($row["gender"]) . "</td>
+							<td>" . ucfirst($row["event"]) . "</td>
+							<td>" . ucfirst($row["season"]) . "</td>
+							<td>" . ucfirst($row["style"]) . "</td>
+							<td>" . ucfirst($row["brand"]) . "</td>
+							<td>" . ucfirst($row["color"]) . "</td>
+							<td>" . ucfirst($row["fabric"]) . "</td>
 							<td>" . $row["stock"] . "</td>
 							<td>
 								<a href=\"update.php?page=products&id=" . $row["id_product"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Update</a>
@@ -206,14 +206,15 @@ function showOrders() {
 		"<table class=\"tbl-cart\" cellpadding=\"10\" cellspacing=\"1\">
 			<tbody>
 				<tr>
-					<th>id_order</th>
-					<th>id_user</th>
-					<th>ids_products</th>
-					<th>quantities</th>
-					<th>status</th>
-					<th>total_price</th>
-					<th>Actions</th>
+					<th>Id_Order</th>
+					<th>Id_User</th>
+					<th>Ids_Products</th>
+					<th>Quantities</th>
+					<th>Total Price</th>
+					<th>Address</th>
+					<th>Status</th>
 					<th>Update Status</th>
+					<th>Actions</th>
 				</tr>";
 
 	$sql = "SELECT * FROM Orders";
@@ -234,8 +235,10 @@ function showOrders() {
 							<td>" . $row["id_user"] . "</td>
 							<td>" . $row["ids_products"] . "</td>
 							<td>" . $row["quantities"] . "</td>
-							<td>" . $row["status"] . "</td>
 							<td>" . $row["total_price"] . "</td>
+							<td>" . $row["address"] . "</td>
+							<td>" . ucfirst($row["status"]) . "</td>
+							
 							<td>
 								<a href=\"admin.php?page=orders&id=" . $row["id_order"] . " \" class=\"btnRemoveAction\"><img class=\"remove-button\">Delete</a>
 							</td>

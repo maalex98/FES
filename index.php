@@ -14,7 +14,7 @@ include 'header.php';
 	<div class="gender">
 		<div class="gender-box">
 			<p>Men</p>
-			<a href="shop.php?gender=male">
+			<a href="shop.php?gender=men">
 				<img class="image" src="images/men.jpg">
 			</a>
 		</div>
@@ -23,7 +23,7 @@ include 'header.php';
 			<p>
 				Women
 			</p>
-			<a href="shop.php?gender=female">
+			<a href="shop.php?gender=women">
 				<img class="image" src="images/women.jpg">
 			</a>
 		</div>

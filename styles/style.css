@@ -182,6 +182,7 @@ h3 {
     color: #a94442;
     width: 100%;
     height: 5%;
+    margin-left: 2%;
 }
 
 @media screen and (max-width: 992px) {

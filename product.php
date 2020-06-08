@@ -19,7 +19,7 @@ include "./phpfiles/product.php"
         ?>
         <h2>
             <?php
-            echo $data["name"] . " - " . ucfirst($data["gender"]) . " - " .  $data["brand"] . " - " . ucfirst($data["color"]);
+            echo ucfirst($data["name"]) . " - " .  ucfirst($data["brand"]);
             ?>
         </h2>
         <h2>
@@ -51,12 +51,22 @@ include "./phpfiles/product.php"
         <ul class="product-description">
             <li>
                 <?php
+                echo "Gender - " . ucfirst($data["gender"]);
+                ?>
+            </li>
+            <li>
+                <?php
                 echo "Type - " . ucfirst($data["type"]);
                 ?>
             </li>
             <li>
                 <?php
                 echo "Fabric - " . ucfirst($data["fabric"]);
+                ?>
+            </li>
+            <li>
+                <?php
+                echo "Color - " . ucfirst($data["color"]);
                 ?>
             </li>
             <li>

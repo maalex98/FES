@@ -22,7 +22,7 @@ for($it=0; $it<$NumberOfEach ; $it=$it+1){
 	$name = $colors[$colorNumber].' shoes ' . $shoesSizes[$sizeNumber];
 	$price = rand(100,500);
 	$rand_number=rand(1,8);
-	$gender= 'female';
+	$gender= 'women';
 	$eventNumber = rand(0,3);
 	$seasonNumber = rand(0,3);
 	$styleNumber = rand(0,2);
@@ -43,7 +43,7 @@ for($it=0; $it<$NumberOfEach ; $it=$it+1){
 	$name = $colors[$colorNumber].' jacket ' . $jacketsSizes[$sizeNumber];
 	$price = rand(100,500);
 	$rand_number=rand(1,4);
-	$gender= 'female';
+	$gender= 'women';
 	$eventNumber = rand(0,3);
 	$seasonNumber = rand(0,3);
 	$styleNumber = rand(0,2);
@@ -64,7 +64,7 @@ for($it=0; $it<$NumberOfEach ; $it=$it+1){
 	$name = $colors[$colorNumber].' shirt ' . $jacketsSizes[$sizeNumber];
 	$price = rand(100,500);
 	$rand_number=rand(1,4);
-	$gender= 'female';
+	$gender= 'women';
 	$eventNumber = rand(0,3);
 	$seasonNumber = rand(0,3);
 	$styleNumber = rand(0,2);

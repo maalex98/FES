@@ -69,8 +69,6 @@ function showOrder($sqlResult) {
 
                 $rowNum += 1;
             }
-        } else {
-            echo "Products Mismatch!";
         }
     } else {
         echo mysqli_error($conn);

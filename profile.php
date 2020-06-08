@@ -1,74 +1,70 @@
 <?php
-require_once 'phpfiles/startSession.php';
-include 'header.php'
+include "header.php";
+
+require_once "phpfiles/editProfile.php";
 ?>
 
 <div class="testbox">
     <h5 id="title">Feel Free to Make Changes! :)</h5>
     <hr />
-
-    <?php
-    if (@$_GET["IncorrectPassword"] == true) {
-    ?>
-        <div id="err">
-            <?php echo $_GET["IncorrectPassword"] ?>
-        </div>
-    <?php
-    }
-    if (@$_GET["PasswordMismatch"] == true) {
-    ?>
-        <div id="err">
-            <?php echo $_GET["PasswordMismatch"] ?>
-        </div>
-    <?php
-    }
-    if (@$_GET["NoSession"] == true) {
-    ?>
-        <div id="err">
-            <?php echo $_GET["NoSession"] ?>
-        </div>
-    <?php
-    }
-    if (@$_GET["NoPassword"] == true) {
-    ?>
-        <div id="err">
-            <?php echo $_GET["NoPassword"] ?>
-        </div>
-    <?php
-    }
-    ?>
 </div>
+
+<?php
+getUserData();
+
+if (null != $userData) {
+?>
 
 <form method="POST" action="phpfiles/editProfile.php" class="form-container">
     <div class="form-group">
         <p>Edit Username</p>
-        <input type="text" name="username" placeholder="Username"><br />
+        <?php
+            echo "<input type=\"text\" name=\"username\" placeholder=".$userData["username"]."><br />";
+        ?>
     </div>
 
     <div class="form-group">
         <p>Edit Email</p>
-        <input type="text" name="email" placeholder="Email"><br />
+        <?php
+            echo "<input type=\"text\" name=\"email\" placeholder=".$userData["email"]."><br />";
+        ?>
     </div>
 
     <div class="form-group">
         <p>Edit Country</p>
-        <input type="text" name="country" placeholder="Country"><br />
+        <?php
+            echo "<input type=\"text\" name=\"country\" placeholder=".$userData["country"]."><br />";
+        ?>
+    </div>
+
+    <div class="form-group">
+        <p>Edit Address</p>
+        <?php
+            echo "<input type=\"text\" name=\"address\" placeholder='".$userData["address"]."'><br />";
+        ?>
     </div>
 
     <div class="form-group">
         <p>Edit Password</p>
-        <input type="password" name="password" placeholder="Password"><br />
-        <input type="password" name="confirm-password" placeholder="Confirm Password"><br />
+        <input type="password" name="password" placeholder="New Password"><br />
     </div>
 
     <div class="form-group">
-        <p>Type Your Current Password in Order to Update the Profile !</p>
+        <p>Enter Your Current Password in Order to Update the Profile !</p>
         <input type="password" name="current-password" placeholder="Current Password"><br />
         <input type="submit" name="commit" value="Update" class="button">
     </div>
+
+    <p class="error">
+        <?php
+            showError();
+        ?>
+    </p>
 </form>
 
 <?php
+}
+
 include "footer.php";
 ?>
 

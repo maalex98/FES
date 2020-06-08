@@ -27,6 +27,10 @@
     background-color: #383434;
 }
 
+.admin-content {
+    margin-top: 3%;
+}
+
 .admin {
     display: flex;
     flex-direction: column;

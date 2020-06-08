@@ -219,7 +219,7 @@ function showProducts() {
         }
 
         echo "<div class=\"product-box-title\">
-                    <p>$name[$it] - $color[$it] - $brand[$it] - <b>$price[$it]\$</b></p>
+                    <p>$name[$it] - $brand[$it] - <b>$price[$it]\$</b></p>
                 </div>
             </div>
         </a>";

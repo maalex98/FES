@@ -38,6 +38,8 @@
 .no-records {
     text-align: center;
     font-size: 30px;
+    height: 175px;
+    margin-top: 3%;
 }
 
 .empty-cart {

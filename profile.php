@@ -4,7 +4,7 @@ include 'header.php'
 ?>
 
 <div class="testbox">
-    <h5 id="title">Edit Profile</h5>
+    <h5 id="title">Feel Free to Make Changes! :)</h5>
     <hr />
 
     <?php
@@ -68,29 +68,9 @@ include 'header.php'
     </div>
 </form>
 
-<footer>
-    <div class="share">
-        <div class="share-content">
-            <p>FOLLOW US</p>
-
-            <a class="share-logo" href="https://www.facebook.com">
-                <i class="fa fa-facebook-square"></i>
-            </a>
-
-            <a class="share-logo" href="https://www.twitter.com">
-                <i class="fa fa-twitter-square"></i>
-            </a>
-
-            <a class="share-logo" href="https://www.instagram.com">
-                <i class="fa fa-youtube-square"></i>
-            </a>
-
-            <a class="share-logo" href="https://www.instagram.com">
-                <i class="fa fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-</footer>
+<?php
+include "footer.php";
+?>
 
 </body>
 

@@ -20,7 +20,7 @@ $allFabrics = array();
 
 $totalProducts;
 $pageno;
-$numOfProductsPerPage = 6;
+$numOfProductsPerPage = 12;
 
 $sql = "";
 $whereClause = '';

@@ -231,11 +231,21 @@ function showPages() {
     global $numOfProductsPerPage;
     global $totalProducts;
 
-    if ($pageno > 1) {
-        echo "<a href=\"shop.php?gender=".$_GET["gender"]."&pageno=".($pageno - 1)."\" class=\"previous round\">Previous Page &nbsp &nbsp</a>";
-    }
-
-    if ($pageno * $numOfProductsPerPage < $totalProducts) {
-        echo "<a href=\"shop.php?gender=".$_GET["gender"]."&pageno=".($pageno + 1)."\" class=\"next round\">Next Page</a>";
+    if (isset($_GET["gender"]) && !empty($_GET["gender"])) {
+        if ($pageno > 1) {
+            echo "<a href=\"shop.php?gender=".$_GET["gender"]."&pageno=".($pageno - 1)."\" class=\"previous round\">Previous Page &nbsp &nbsp</a>";
+        }
+    
+        if ($pageno * $numOfProductsPerPage < $totalProducts) {
+            echo "<a href=\"shop.php?gender=".$_GET["gender"]."&pageno=".($pageno + 1)."\" class=\"next round\">Next Page</a>";
+        }
+    } else {
+        if ($pageno > 1) {
+            echo "<a href=\"shop.php?gender=women&pageno=".($pageno - 1)."\" class=\"previous round\">Previous Page &nbsp &nbsp</a>";
+        }
+    
+        if ($pageno * $numOfProductsPerPage < $totalProducts) {
+            echo "<a href=\"shop.php?gender=women&pageno=".($pageno + 1)."\" class=\"next round\">Next Page</a>";
+        }
     }
 }

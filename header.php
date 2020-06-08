@@ -1,5 +1,6 @@
 <?php
 require_once './phpfiles/startSession.php';
+include "./phpfiles/headerController.php";
 ?>
 
 <!DOCTYPE html>
@@ -35,26 +36,15 @@ require_once './phpfiles/startSession.php';
                 <div class="row_submenu">
                     <div class="column_submenu">
                         <h3>Events</h3>
-                        <a href="shop.php?gender=men&event=office">Christmas</a>
-                        <a href="shop.php?gender=men&event=graduation">Graduation</a>
-                        <a href="shop.php?gender=men&event=wedding">Weeding</a>
-                        <a href="shop.php?gender=men&event=halloween">Halloween</a>
-                        <h3>Trends</h3>
-                        <a href="shop.php?gender=men&trends=sweetsneaks">Sport</a>
-                        <a href="shop.php?gender=men&trends=90remix">Office</a>
-                        <a href="shop.php?gender=men&trends=lookslove">Looks We Love</a>
-                        <a href="shop.php?gender=men&trends=modern">Modern</a>
+                        <?php showOptions("event", "men") ?>
+                        <h3>Fabrics</h3>
+                        <?php showOptions("fabric", "men") ?>
                     </div>
                     <div class="column_submenu">
                         <h3>Seasons</h3>
-                        <a href="shop.php?gender=men&season=summer">Summer</a>
-                        <a href="shop.php?gender=men&season=autumn">Autumn</a>
-                        <a href="shop.php?gender=men&season=winter">Winter</a>
-                        <a href="shop.php?gender=men&season=spring">Spring</a>
-                        <h3>New Arrivals</h3>
-                        <a href="shop.php?gender=men&brand=nikeair">Something Fashion</a>
-                        <a href="shop.php?gender=men&brand=gucci">Something More Fashion</a>
-                        <a href="shop.php?gender=men&brand=supreme">The Best Fashion Ever</a>
+                        <?php showOptions("season", "men") ?>
+                        <h3>Brands</h3>
+                        <?php showOptions("brand", "men") ?>
 
                         <a href="shop.php?gender=men" style="padding-top: 15px;"><b>ALL</b></a>
                     </div>
@@ -71,26 +61,15 @@ require_once './phpfiles/startSession.php';
                 <div class="row_submenu">
                     <div class="column_submenu">
                         <h3>Events</h3>
-                        <a href="shop.php?gender=women&event=office">Christmas</a>
-                        <a href="shop.php?gender=women&event=graduation">Graduation</a>
-                        <a href="shop.php?gender=women&event=wedding">Weeding</a>
-                        <a href="shop.php?gender=women&event=halloween">Halloween</a>
-                        <h3>Trends</h3>
-                        <a href="shop.php?gender=women&trends=sweetsneaks">Sport</a>
-                        <a href="shop.php?gender=women&trends=90remix">Office</a>
-                        <a href="shop.php?gender=women&trends=lookslove">Looks We Love</a>
-                        <a href="shop.php?gender=women&trends=modern">Modern</a>
+                            <?php showOptions("event", "women") ?>
+                        <h3>Fabrics</h3>
+                            <?php showOptions("fabric", "women") ?>
                     </div>
                     <div class="column_submenu">
                         <h3>Seasons</h3>
-                        <a href="shop.php?gender=women&season=summer">Summer</a>
-                        <a href="shop.php?gender=women&season=autumn">Autumn</a>
-                        <a href="shop.php?gender=women&season=winter">Winter</a>
-                        <a href="shop.php?gender=women&season=spring">Spring</a>
-                        <h3>New Arrivals</h3>
-                        <a href="shop.php?gender=women&brand=nikeair">Something Fashion</a>
-                        <a href="shop.php?gender=women&brand=gucci">Something More Fashion</a>
-                        <a href="shop.php?gender=women&brand=supreme">The Best Fashion Ever</a>
+                            <?php showOptions("season", "women") ?>
+                        <h3>Brands</h3>
+                            <?php showOptions("brand", "women") ?>    
 
                         <a href="shop.php?gender=women" style="padding-top: 15px;"><b>ALL</b></a>
                     </div>
@@ -107,26 +86,15 @@ require_once './phpfiles/startSession.php';
                 <div class="row_submenu">
                     <div class="column_submenu">
                         <h3>Events</h3>
-                        <a href="shop.php?gender=kids&event=office">Christmas</a>
-                        <a href="shop.php?gender=kids&event=graduation">Graduation</a>
-                        <a href="shop.php?gender=kids&event=wedding">Weeding</a>
-                        <a href="shop.php?gender=kids&event=halloween">Halloween</a>
-                        <h3>Trends</h3>
-                        <a href="shop.php?gender=kids&trends=sweetsneaks">Sport</a>
-                        <a href="shop.php?gender=kids&trends=90remix">Office</a>
-                        <a href="shop.php?gender=kids&trends=lookslove">Looks We Love</a>
-                        <a href="shop.php?gender=kids&trends=modern">Modern</a>
+                            <?php showOptions("event", "kids") ?>  
+                        <h3>Fabrics</h3>
+                            <?php showOptions("fabric", "kids") ?>   
                     </div>
                     <div class="column_submenu">
                         <h3>Seasons</h3>
-                        <a href="shop.php?gender=kids&season=summer">Summer</a>
-                        <a href="shop.php?gender=kids&season=autumn">Autumn</a>
-                        <a href="shop.php?gender=kids&season=winter">Winter</a>
-                        <a href="shop.php?gender=kids&season=spring">Spring</a>
-                        <h3>New Arrivals</h3>
-                        <a href="shop.php?gender=kids&brand=nikeair">Something Fashion</a>
-                        <a href="shop.php?gender=kids&brand=gucci">Something More Fashion</a>
-                        <a href="shop.php?gender=kids&brand=supreme">The Best Fashion Ever</a>
+                            <?php showOptions("season", "kids") ?> 
+                        <h3>Brands</h3>
+                            <?php showOptions("brand", "kids") ?> 
 
                         <a href="shop.php?gender=kids" style="padding-top: 15px;"><b>ALL</b></a>
                     </div>

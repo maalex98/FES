@@ -212,6 +212,7 @@ function showOrders() {
 					<th>Quantities</th>
 					<th>Total Price</th>
 					<th>Address</th>
+					<th>Phone Number</th>
 					<th>Status</th>
 					<th>Update Status</th>
 					<th>Actions</th>
@@ -237,6 +238,7 @@ function showOrders() {
 							<td>" . $row["quantities"] . "</td>
 							<td>" . $row["total_price"] . "</td>
 							<td>" . $row["address"] . "</td>
+							<td>" . $row["phone_number"] . "</td>
 							<td>" . ucfirst($row["status"]) . "</td>
 							
 							<td>

@@ -45,7 +45,7 @@ if (isset($_POST["placeOrder"])) {
             $price += $product->price * $product->quantity;
         }
 
-        $sql = "INSERT INTO Orders (id_user, ids_products, quantities, total_price, status, address) VALUES ('".$_SESSION["id_user"]."', '".$productsIds."', '".$quantities."', '".$price."', '".$status."', '".$_POST["address"]."');";
+        $sql = "INSERT INTO Orders (id_user, ids_products, quantities, total_price, status, phone_number,address) VALUES ('".$_SESSION["id_user"]."', '".$productsIds."', '".$quantities."', '".$price."', '".$status."', '".$_POST["phone-number"]."', '".$_POST["address"]."');";
 
         $result = mysqli_query($conn, $sql);
 

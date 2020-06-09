@@ -16,9 +16,16 @@ if ((null != $userData) && !empty($_SESSION["cart"])) {
     <div class="form-group">
         <p>Enter The Delivery Address</p>
         <?php
-            echo "<input type=\"text\" name=\"address\" placeholder='".$userData["address"]."' value='".$userData["address"]."'><br />";
+            echo "<input type=\"text\" name=\"address\" placeholder='".$userData["address"]."' value='".$userData["address"]."'><br>";
         ?>
     </div>
+
+	<div class="form-group">
+	    <p>Enter your Phone Number</p>
+	    <?php
+	         echo "<input type=\"text\" name=\"phone-number\"><br>";
+	    ?>
+	</div>
 
     <div class="form-group">
         <p><b>Note: Only Cash on Delivery Payment is Supported!</b></p>

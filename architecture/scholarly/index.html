@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FooW Scholarly HTML report</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+</head>
+
+<body prefix="schema: http://schema.org">
+    <header>
+        <div class="banner">
+            <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+            <div class="status">FooW project</div>
+        </div>
+        <h1>Footwear Web Assistant report</h1>
+    </header>
+    <div role="contentinfo">
+        <dl>
+            <dt>Authors</dt>
+            <dd>
+                Matei Alexandru &amp; Mihuleac Narcis-Petrisor
+            </dd>
+        </dl>
+    </div>
+    <section id="introduction" role="doc-introduction">
+        <h2>Cerintele Proiectului - Fashion E-Shop a.k.a. FES</h2>
+        <p>
+            Sa se realizeze o aplicatie Web care gestioneaza colectii de imbracaminte si proprietatile aferente: categorie, materiale, tipuri de croiala, pret, marime, imagini, destinatari (copii, tineri, adulti), context (garderoba casual, sport, pentru diverse
+            ocazii: bal mascat, aniversari,...), colectii deosebite si altele.
+        </p>
+        <p>
+            Sistemul va oferi suport pentru activitati de cumparare/licitare a acestor haine, inclusiv administrarea utilizatorilor.
+        </p>
+        <p>
+            Se vor genera statistici diverse ce pot fi exportate in formate deschise – minimal, CSV si PDF.
+        </p>
+        <p>
+            Se va realiza, de asemenea, un clasament al celor mai populare produse, disponibil si ca flux de date RSS.
+        </p>
+    </section>
+    <section id="structure">
+        <h2>Tehnologii Utilizate</h2>
+        <p>
+            Interfata Web a utilizatorului a fost realizata utilizand HTML, CSS si JavaScript.
+        </p>
+        <p>
+            Serverul Web a fost realizat cu ajutorul PHP.
+        </p>
+        <p>
+            Stocarea si managementul datelor au fost realizate utilizand MySQL.
+        </p>
+    </section>
+    <section id="semantics">
+        <h2>Diagrame</h2>
+        <section id="Root">
+            <h3>Diagrama Bazei de Date</h3>
+            <img src="../diagrams/Database.png" style="height:100%;width:100%;">
+        </section>
+        <section id="Root">
+            <h3>Arhitectura aplicației</h3>
+            <img src="../diagrams/Application.png" style="height:100%;width:100%;">
+        </section>
+        <section id="Root">
+            <h3>Diagrama Map</h3>
+            <img src="../diagrams/Map.png" style="height:100%;width:100%;">
+        </section>
+        <section id="Root">
+            <h3>Diagrama UseCase</h3>
+            <img src="../diagrams/UseCase.png" style="height:100%;width:100%;">
+        </section>
+    </section>
+    <section id="semantics">
+        <h2>Sistemul de Management al Codului Sursa</h2>
+        <p>
+            Pentru stocarea si managementul codului sursa am utilizat <a href="https://github.com/maalex98/FES">GitHub</a>.
+        </p>
+    </section>
+    <section id="semantics">
+        <h2>Roluri ale Utilizatorilor</h2>
+        <p>Un Utilizator poate fi in cadrul aplicatiei Vizitator, Membru sau Administrator.</p>
+        <p>Un <b>Vizitator</b> poate accesa:</p>
+        <ul>
+            <li>Pagina de Inregistrare/Autentificare.</li>
+            <li>Pagina de Shop, insa fara posibilitatea de a adauga produse in cos sau a plasa o comanda.</li>
+            <li>Fluxurile de Date RSS.</li>
+        </ul>
+        <p>Un <b>Membru</b> poate accessa:</p>
+        <ul>
+            <li>Toate paginile disponibile unui <b>Vizitator</b>.</li>
+            <li>Cosul de produse si poate plasa comenzi.</li>
+            <li>Pagina pentru editare a profilului.</li>
+            <li>Pagina ce prezinta istoricul comenzilor efectuate.</li>
+            <li>Optiunea de Logout.</li>
+        </ul>
+        <p>Un <b>Administrator</b> poate accesa:</p>
+        <ul>
+            <li>Toate paginile disponibile unui <b>Membru</b>.</li>
+            <li>Panoul pentru generare a statisticilor.</li>
+            <li>Interfata de administrator prin care se pot efectua:</li>
+            <ul>
+                <li>Stergerea si modificarea datelor unui Utilizator.</li>
+                <li>Adaugarea, stergerea si modificarea datelor unui Produs.</li>
+                <li>Stergerea si modificarea statusului unei Comenzi.</li>
+            </ul>
+        </ul>
+    </section>
+    <section id="semantics">
+        <h2>Functionalitati</h2>
+        <p><b>Shop</b></p>
+        <ul>
+            <li>Foloseste un singur view care centralizeaza in functie de filtre continutul dorit de catre user.</li>
+            <li>Dupa cum s-a mentionat mai sus acesta pune la dispozitie un filter bar impreuna cu produsele disponibile intr-un continut responsive si paginat.</li>
+        </ul>
+        <p><b>Products</b></p>
+        <ul>
+            <li>Interogheaza baza de date cu privire la un anumit produs si afiseaza intr-un mod elegant informatiile cheie.</li>
+            <li>Ofera posibilitatea de adaugare a produsului intr-o anumita cantitate, atat timp cat acesta este disponibil, in cos.</li>
+        </ul>
+        <p><b>Cart</b></p>
+        <ul>
+            <li>Foloseste sesiunea pentru a salva produsele salvate in cos de utilizator pe parcursul cumparaturilor.</li>
+            <li>Interogheaza baza de date si face calculele necesare pentru a oferi clientului lista finala de cumparaturi cu posibilitatea de a modifica sau sterge anumite produse.</li>
+        </ul>
+        <p><b>Place Order</b></p>
+        <ul>
+            <li>Interogheaza user-ul cu privire la datele necesare livrarii si plaseaza comanda in baza de date pentru a o pune in atentia administratorilor.</li>
+        </ul>
+        <p><b>Admin Panel</b></p>
+        <ul>
+            <li>Ofera o interfata cu posibilitati de modificare a bazei de date.</li>
+            <li>Necesara pentru a updatata starea comenzilor si a produselor aplicatiei.</li>
+        </ul>
+        <p><b>Statisici</b></p>
+        <ul>
+            <li>Utilizeaza libraria FPDF pentru a genera statistici pe baza comenzilor si a userilor intr-un format pdf.</li>
+        </ul>
+    </section>
+    <section id="semantics">
+        <h2>Etapele de Dezvoltare a Proiectului</h2>
+        <p><b>Baza de Date</b> - Creata de catre Mihuleac Narcis.</p>
+        <p><b>Index</b> - Creat de catre Matei Alexandru si Mihuleac Narcis.</p>
+        <p><b>Register & Login</b> - Creat de catre Matei Alexandru si updatat de catre Mihuleac Narcis.</p>
+        <p><b>Edit Profile</b> - Creat de catre Mihuleac Narcis.</p>
+        <p><b>Shop</b> - Creat de catre Matei Alexandru si updatat de catre Mihuleac Narcis.</p>
+        <p><b>Product</b> - Creat de catre Mihuleac Narcis.</p>
+        <p><b>Cart</b> - Creat de catre Matei Alexandru si updatat de catre Mihuleac Narcis.</p>
+        <p><b>Place Order & Show Orders</b> - Creat de catre Mihuleac Narcis.</p>
+        <p><b>Admin Panel</b> - Creat de catre Matei Alexandru si updatat de catre Mihuleac Narcis.</p>
+        <p><b>Paginare</b> - Creat de catre Mihuleac Narcis.</p>
+        <p><b>Statistici Shop</b> - Creat de catre Matei Alexandru.</p>
+        <p><b>Fluxuri RSS</b> - Create de catre Matei Alexandru.</p>
+    </section>
+    <section id="semantics">
+        <h2>Resurse Externe Utilizate</h2>
+        <ul>
+            <li>Stackoverflow</li>
+            <li>W3School</li>
+            <li>Documentatia Oficiala PHP</li>
+            <li>MDN</li>
+            <li>FPDF</li>
+            <li>CSS Validator</li>
+            <li>HTML Validator</li>
+            <li>Schema</li>
+        </ul>
+    </section>
+</body>
+
+</html>
